@@ -1,7 +1,8 @@
 import './App.css';
-import {Auth} from "./components/auth";
+import {Auth} from "./components/auth/Auth";
 import {useRef, useState} from "react";
 import Cookies from "universal-cookie";
+import {Chat} from "./components/chat/Chat";
 
 const cookies = new Cookies();
 
@@ -14,19 +15,19 @@ function App() {
     if (!isAuth) {
         return (
             <div>
-                <Auth/>
+                <Auth setIsAuth={setIsAuth}/>
             </div>
         );
     }
     return (
         <div>
             {room ? (
-                <div> Chat </div>
+                <Chat room={room}/>
             ) : (
                 <div className="room">
                     <label> Enter room name:</label>
                     <input ref={roomInputRef}/>
-                    <button onClick={() => setRoom(roomInputRef.current.valueOf())}>
+                    <button onClick={() => setRoom(roomInputRef.current.value)}>
                         Enter chat
                     </button>
                 </div>
