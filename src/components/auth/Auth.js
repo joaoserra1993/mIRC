@@ -1,5 +1,7 @@
 import {auth, provider} from '../../firebase-config';
 import {signInWithPopup} from 'firebase/auth';
+import './Auth.css';
+
 
 // with this, after you signed in, if you refresh the page you'll maintain signed in
 import Cookies from 'universal-cookie';
@@ -20,12 +22,13 @@ export const Auth = (props) => {
         }
     };
 
-    return <div className="auth">
-        <p>
-            Sign in with google to continue
-        </p>
-        <button onClick={signInWithGoogle}>
-            Sign In
-        </button>
-    </div>;
-}
+    return (
+        <div className="auth-container">
+            <div className="white-rectangle"></div>
+            <div className="auth">
+            <button className="sign-in" onClick={signInWithGoogle}>
+                </button>
+            </div>
+        </div>
+    );
+ }
