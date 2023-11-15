@@ -32,17 +32,18 @@ function App() {
       {room ? (
         <Chat room={room}/>
       ) : (
+        <div className="lobby-container">
+        <div className="background"></div>
         <div className="room">
-          <label> Enter room name:</label>
-          <input ref={roomInputRef}/>
-          <button onClick={() => setRoom(roomInputRef.current.value)}>
-            Enter chat
-          </button>
+          <label className='room-name'>Room name</label>
+          <input className="box-input" ref={roomInputRef}/>
+          <div className='get-in' onClick={() => setRoom(roomInputRef.current.value)}>
+            GET IN
+          </div>
+        </div>
         </div>
       )}
-    <div className="sign-out">
-      <button onClick={signOutUser}>Sign Out</button>
-    </div>
+      <button className="sign-out" onClick={signOutUser}></button>
     </>
   );
 }

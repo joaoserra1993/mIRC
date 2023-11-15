@@ -24,7 +24,7 @@ export const Auth = (props) => {
 
     return (
         <div className="auth-container">
-            <div className="white-rectangle"></div>
+            <div className="background"></div>
             <div className="auth">
             <button className="sign-in" onClick={signInWithGoogle}>
                 </button>
