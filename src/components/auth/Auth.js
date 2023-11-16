@@ -29,10 +29,19 @@ export const Auth = (props) => {
      };
 
     if (loading) {
-        return <div class="lds-default"></div>;
+        return (
+            <div className="background-loading">
+            <div className="loading-background">
+                <div className="progress">
+                   <div className="color"></div>
+                </div>
+            </div>
+        </div>        
+            )
     }
     return (
-        <div className={`auth-container ${loading ? 'loading-page' : ''}`}>
+        // não está a ser executada a linha imediatamente a baixo ou visível
+        <div className={`auth-container ${loading ? 'loading-page' : ''}`}> 
         <div className="auth-container">
             <div className="background"></div>
             <div className="auth">
