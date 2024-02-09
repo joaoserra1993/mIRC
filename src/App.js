@@ -30,7 +30,9 @@ function App() {
   return (
     <>
       {room ? (
-        <Chat room={room}/>
+        <div>
+          <Chat room={room}/>
+        </div>
       ) : (
         <div className="lobby-container">
         <div className="background"></div>
@@ -41,11 +43,11 @@ function App() {
             GET IN
           </div>
         </div>
+        <button className="sign-out" onClick={signOutUser}></button>
         </div>
       )}
-      <button className="sign-out" onClick={signOutUser}></button>
     </>
   );
-}
+ }
 
 export default App;
